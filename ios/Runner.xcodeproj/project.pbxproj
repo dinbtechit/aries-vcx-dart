@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
+		2480F9A82939888200E5EAD5 /* libnative_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2480F9A12939872B00E5EAD5 /* libnative_static.a */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
@@ -16,6 +17,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2480F99E2939872B00E5EAD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A35253342866B1B000EFD9C6 /* native.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CA603EE7FF4DEAC3B2E0A336;
+			remoteInfo = "native-cdylib";
+		};
+		2480F9A02939872B00E5EAD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A35253342866B1B000EFD9C6 /* native.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CA60F0FEBE702969E816930C;
+			remoteInfo = "native-staticlib";
+		};
+		2480F9A62939886E00E5EAD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A35253342866B1B000EFD9C6 /* native.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CA60F0FEBE701C83950DBC35;
+			remoteInfo = "native-staticlib";
+		};
 		A309F0B92927FD3600259411 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A35253292866B17200EFD9C6 /* native.xcodeproj */;
@@ -69,12 +91,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2480F9A82939888200E5EAD5 /* libnative_static.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2480F99A2939872900E5EAD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2480F99F2939872B00E5EAD5 /* native.dylib */,
+				2480F9A12939872B00E5EAD5 /* libnative_static.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9740EEB11CF90186004384FC /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +187,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2480F9A72939886E00E5EAD5 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
@@ -189,6 +222,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 2480F99A2939872900E5EAD5 /* Products */;
+					ProjectRef = A35253342866B1B000EFD9C6 /* native.xcodeproj */;
+				},
+				{
 					ProductGroup = A309F0B42927FD3300259411 /* Products */;
 					ProjectRef = A35253292866B17200EFD9C6 /* native.xcodeproj */;
 				},
@@ -201,6 +238,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2480F99F2939872B00E5EAD5 /* native.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = native.dylib;
+			remoteRef = 2480F99E2939872B00E5EAD5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2480F9A12939872B00E5EAD5 /* libnative_static.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libnative_static.a;
+			remoteRef = 2480F9A02939872B00E5EAD5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A309F0BA2927FD3600259411 /* native.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
@@ -273,6 +324,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2480F9A72939886E00E5EAD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "native-staticlib";
+			targetProxy = 2480F9A62939886E00E5EAD5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		97C146FA1CF9000F007C117D /* Main.storyboard */ = {

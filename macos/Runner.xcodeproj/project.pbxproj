@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		2480F9B6293988BE00E5EAD5 /* libnative_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A309F0C62927FD5500259411 /* libnative_static.a */; };
 		335BBD1B22A9A15E00E9071D /* GeneratedPluginRegistrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BBD1A22A9A15E00E9071D /* GeneratedPluginRegistrant.swift */; };
 		33CC10F12044A3C60003C045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CC10F02044A3C60003C045 /* AppDelegate.swift */; };
 		33CC10F32044A3C60003C045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33CC10F22044A3C60003C045 /* Assets.xcassets */; };
@@ -29,6 +30,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2480F9B0293988A100E5EAD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A352534B2866B29F00EFD9C6 /* native.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CA603EE7FF4DEAC3B2E0A336;
+			remoteInfo = "native-cdylib";
+		};
+		2480F9B2293988A100E5EAD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A352534B2866B29F00EFD9C6 /* native.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CA60F0FEBE702969E816930C;
+			remoteInfo = "native-staticlib";
+		};
+		2480F9B4293988B600E5EAD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A35253422866B29000EFD9C6 /* native.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CA603EE7FF4DCCA7472EC19F;
+			remoteInfo = "native-cdylib";
+		};
 		33CC111F2044C79F0003C045 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 33CC10E52044A3C60003C045 /* Project object */;
@@ -92,12 +114,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2480F9B6293988BE00E5EAD5 /* libnative_static.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2480F9AA293988A100E5EAD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2480F9B1293988A100E5EAD5 /* native.dylib */,
+				2480F9B3293988A100E5EAD5 /* libnative_static.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		33BA886A226E78AF003329D5 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +229,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2480F9B5293988B600E5EAD5 /* PBXTargetDependency */,
 				33CC11202044C79F0003C045 /* PBXTargetDependency */,
 			);
 			name = Runner;
@@ -246,6 +279,10 @@
 					ProductGroup = A309F0BE2927FD5500259411 /* Products */;
 					ProjectRef = A35253422866B29000EFD9C6 /* native.xcodeproj */;
 				},
+				{
+					ProductGroup = 2480F9AA293988A100E5EAD5 /* Products */;
+					ProjectRef = A352534B2866B29F00EFD9C6 /* native.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -256,6 +293,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2480F9B1293988A100E5EAD5 /* native.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = native.dylib;
+			remoteRef = 2480F9B0293988A100E5EAD5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2480F9B3293988A100E5EAD5 /* libnative_static.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libnative_static.a;
+			remoteRef = 2480F9B2293988A100E5EAD5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A309F0C42927FD5500259411 /* native.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
@@ -338,6 +389,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2480F9B5293988B600E5EAD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "native-cdylib";
+			targetProxy = 2480F9B4293988B600E5EAD5 /* PBXContainerItemProxy */;
+		};
 		33CC11202044C79F0003C045 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 33CC111A2044C6BA0003C045 /* Flutter Assemble */;
